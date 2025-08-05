@@ -61,6 +61,7 @@ Navigate from Home to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
 Navigate from Menu to Favorite,CLICK,FAVORITE RECIPES,SLEEP,2,CHECK,FAVORITE RECIPES
 Navigate from Favorite to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
 Navigate from Menu to Saved,CLICK,SAVED RECIPES,SLEEP,2,CHECK,SAVED RECIPES
+
 Navigate from Saved to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
 Navigate from Menu back to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
 
@@ -74,3 +75,9 @@ Navigate from Menu to Saved,CLICK,SAVED RECIPES,SLEEP,2,CHECK,SAVED RECIPES
 Navigate from Saved to Menu,CLICK_COORDS,209,83,SLEEP,2,CHECK,POPULAR RECIPES
 Navigate from Menu back to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
 =======================================================================================================
+
+Guidelines for UX: 
+
+1. User interactions must be added in the design, and all possible interactions should be covered in UX.
+2. Some models have the token limit 2000 ~ 32000. but the figma design jsob can have text more than that, so we need to filter out some data from design json.
+
