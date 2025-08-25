@@ -1,79 +1,60 @@
 Prompt : 
 =========================================================================================
-The uploaded file is a Figma design JSON exported using the Figma API. Your task is to:
+You are an expert QA automation engineer who specializes in validating Figma prototype user flows. You are meticulous, precise, and never make assumptions outside of the data provided. Your mission is to generate flawless test cases based on prototype interactions extracted from a Figma design JSON file.
+Your Objectives:
+1.	Parse the uploaded JSON file exported using the Figma API.
+2.	Extract all prototype interactions between frames or components.
+3.	For each interaction, produce a test case in the strictly defined format below.
+4.	Ensure test cases validate the user flow in a strict sequential order, where each test case starts at the previous destination.
+5.	Generate test cases in a strict step-by-step flow, moving from each source screen to its destination and then continuing from that destination to the next.
 
-Objective:
-- Parse this JSON file and extract all prototype interactions between frames or components.
-- For each interaction, generate a test case in the required format.
-- The goal is to validate the user flow from source node to destination node using Figma’s prototype definitions.
-
-Test Case Requirements:
-
-1. Test Case Format (1 line per test case):
-Each test case line should include:
+Test Case Format:
+Each test case must be a single line and strictly follow the below format:
 <Test Case Name>, CLICK or CLICK_COORDS, SLEEP, <duration>, CHECK, <expected_text>
+expected_text -> it’s the any static text on the destination screen, which does not change.
+Supported Commands:
+1.	CLICK → Clicks on elements with visible text. (e.g., CLICK, OK)
+2.	CLICK_COORDS → Clicks on specific screen coordinates when no visible text is present.
+3.	SLEEP → Wait for the given duration in seconds. (e.g., SLEEP, 2)
+4.	CHECK → Verify specific text appears after interaction on the destination screen(e.g., CHECK POPULAR RECIPES).
+Strict Rules:
+1.	If no visible text exists on a clickable element → use CLICK_COORDS, x, y.
+2.	Coordinates must map to a 1080x1920 screen, with the top-left corner at (0,0).
+3.	For prototype links, confirm the destination screen using CHECK <any static text on the screen>.
+4.	The text after CHECK and CLICK must be UPPERCASE and exactly match the JSON.
+5.	Maintain sequential navigation:
+	 - Start with an entry screen.
+	 - Generate test cases start from previous destination screen and follow the navigation as defined in the prototype.
+	 - If multiple branches exist, complete one branch fully before moving to another.
+	 - Do not jump backward or create disconnected test cases.
+6.	No extra spaces after commas.
+7.	Save only test case lines to a file named testcases.txt. (No comments or metadata.)
+Your Output Must Be:
+1.	Complete and ready to execute.
+2.	Ordered to follow actual user flows.
+3.	Free of any explanations, comments, or extra formatting—only the raw test cases in the file.
 
-2. Commands Supported:
-Command	Description
-- CLICK: Clicks on elements with visible text. Example: CLICK, OK
-- CLICK_COORDS:	Clicks on specific screen coordinates if text is not present.
-- SLEEP: Waits for a few seconds. Example: SLEEP, 2
-- CHECK: Verifies that specific text appears after interaction.
-
-3. Rules:
-- For elements without visible text, use CLICK_COORDS, x, y.
-- The coordinates should be according to the page of size 1080 X 1920 and top left of the page is 0,0
-- For screens navigated via prototype links, verify the destination screen using CHECK.
-- The text after CHECK and CLICK commands should be in upper case.
-- Spellings of the text should exactly match the text in json data.
-- Make these test cases in sequence like navigate from source page to destination then start from destination page to some other page etc.
-- Avoid extra spaces after commands.
-- Save all the test cases in a file(like testcases.txt)
-- There should be no comment only the test cases should be in the file 
 
 ========================================================================================================================================
 output :: 
 
 Claude 4 sonnet
 
-Navigate from Splash to Home,CLICK_COORDS,540,960,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Home to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Home to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,FAVORITE RECIPES
-Navigate from Menu to Favorite,CLICK,FAVORITE RECIPES,SLEEP,2,CHECK,FAVORITE RECIPES
-Navigate from Favorite to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,SAVED RECIPES
-Navigate from Menu to Saved,CLICK,SAVED RECIPES,SLEEP,2,CHECK,SAVED RECIPES
-Navigate from Saved to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu back to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
-
-Gemini 2.5 pro
-Navigate from Splash to Home,CLICK_COORDS,540,960,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Home to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Favorite,CLICK,FAVORITE RECIPES,SLEEP,2,CHECK,FAVORITE RECIPES
-Navigate from Favorite to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Saved,CLICK,SAVED RECIPES,SLEEP,2,CHECK,SAVED RECIPES
-Navigate from Saved to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu back to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
-
-Grock 4
-Navigate from Splash to Home,CLICK_COORDS,540,960,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Home to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Favorite,CLICK,FAVORITE RECIPES,SLEEP,2,CHECK,FAVORITE RECIPES
-Navigate from Favorite to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Saved,CLICK,SAVED RECIPES,SLEEP,2,CHECK,SAVED RECIPES
-
-Navigate from Saved to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu back to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
-
-Gpt4.1
-
-Navigate from Splash to Home,CLICK_COORDS,540,960,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Home to Menu,CLICK_COORDS,74,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Favorite,CLICK,FAVORITE RECIPES,SLEEP,2,CHECK,FAVORITE RECIPES
-Navigate from Favorite to Menu,CLICK_COORDS,1006,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu to Saved,CLICK,SAVED RECIPES,SLEEP,2,CHECK,SAVED RECIPES
-Navigate from Saved to Menu,CLICK_COORDS,209,83,SLEEP,2,CHECK,POPULAR RECIPES
-Navigate from Menu back to Home,CLICK,POPULAR RECIPES,SLEEP,2,CHECK,POPULAR RECIPES
+Splash Screen Auto Navigation,SLEEP,2,CHECK,LOGIN
+Login to App,CLICK,LOGIN,SLEEP,1,CHECK,POPULAR RECIPES
+Open Main Menu,CLICK_COORDS,73,83,SLEEP,1,CHECK,FAVORITE RECIPES
+Navigate to Saved Recipes,CLICK,SAVED RECIPES,SLEEP,1,CHECK,SAVED RECIPES
+View Recipe Details,CLICK,ENTREES,SLEEP,1,CHECK,PRIME RIB ROAST
+View Preparation Steps,CLICK,PREPARATION,SLEEP,1,CHECK,PREHEAT OVEN TO 350 DEGREES F
+View Recipe Comments,CLICK,COMMENTS,SLEEP,1,CHECK,TOM KLEIN
+Navigate Back to Entrees,CLICK_COORDS,540,80,SLEEP,1,CHECK,PRIME RIB ROAST
+View Dessert Category,CLICK,DESSERT,SLEEP,1,CHECK,STRAWBERRY SHORTCAKE
+Open Recipe Search,CLICK_COORDS,973,91,SLEEP,1,CHECK,SEARCH RECIPE
+Return to Popular Recipes,CLICK_COORDS,88,88,SLEEP,1,CHECK,POPULAR RECIPES
+View Appetizers Category,CLICK,APPETIZERS,SLEEP,1,CHECK,BREADSTICKS
+Open Menu for Profile,CLICK_COORDS,73,83,SLEEP,1,CHECK,HARRY TRUMAN
+View User Profile,CLICK_COORDS,152,1681,SLEEP,1,CHECK,PROFILE
+Logout from Profile,CLICK,LOGOUT,SLEEP,1,CHECK,LOGIN
 =======================================================================================================
 
 Guidelines for UX: 
