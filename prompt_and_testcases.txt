@@ -56,7 +56,25 @@ Open Menu for Profile,CLICK_COORDS,73,83,SLEEP,1,CHECK,HARRY TRUMAN
 View User Profile,CLICK_COORDS,152,1681,SLEEP,1,CHECK,PROFILE
 Logout from Profile,CLICK,LOGOUT,SLEEP,1,CHECK,LOGIN
 =======================================================================================================
-
+Navigate_to_Connections,CLICK,CONNECTIONS,SLEEP,2,CHECK,CONNECTIONS
+Navigate_to_Network_status,CLICK,NETWORK STATUS,SLEEP,2,CHECK,NETWORK STATUS
+Navigate_to_Bluetooth,CLICK,BLUETOOTH,SLEEP,2,CHECK,BLUETOOTH
+Navigate_to_Quick_share_setting,CLICK,QUICK SHARE,SLEEP,2,CHECK,QUICK SHARE SETTING
+Navigate_to_Wi_Fi,CLICK,WI-FI,SLEEP,2,CHECK,WI-FI
+Navigate_to_Easy_connection,CLICK,EASY CONNECTION,SLEEP,2,CHECK,QUICK SHARE SETTING
+Navigate_to_Sound,CLICK,SOUNDS,SLEEP,2,CHECK,SOUND
+Navigate_to_Notifications,CLICK,NOTIFICATIONS,SLEEP,2,CHECK,NOTIFICATIONS
+Navigate_to_Wallpaper_and_style,CLICK,WALLPAPER AND STYLE,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Cover_screen_start_after,CLICK,COVER SCREEN START AFTER,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Wallpaper_and_style,CLICK,DONE,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Wallpaper_and_style,CLICK,CANCEL,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Cover_screen_duration,CLICK,COVER SCREEN DURATION,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Wallpaper_and_style,CLICK_COORDS,540,960,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Wallpaper_and_style,CLICK_COORDS,540,960,SLEEP,2,CHECK,WALLPAPER AND STYLE
+Navigate_to_Storage,CLICK,STORAGE,SLEEP,2,CHECK,STORAGE
+Navigate_to_Display,CLICK,DISPLAY,SLEEP,2,CHECK,DISPLAY
+Navigate_to_App_lock,CLICK,APP LOCK,SLEEP,2,CHECK,APP LOCK
+Navigate_to_Bixby,CLICK,BIXBY,SLEEP,2,CHECK,BIXBY
 Guidelines for UX: 
 
 1. User interactions must be added in the design, and all possible interactions should be covered in UX.
