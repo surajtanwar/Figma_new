@@ -143,5 +143,38 @@ Login again,CLICK,Login,SLEEP,2,CHECK,POPULAR RECIPES
 Open search,CLICK_COORDS,973,91,SLEEP,2,CHECK,Search Recipe
 Return from search,CLICK_COORDS,90,90,SLEEP,2,CHECK,POPULAR RECIPES
 
+========================================
+Connections to Connections,CLICK,Connections,SLEEP,1,CHECK,Connect your refrigerator to your smartphone.
+Sounds to Sound,CLICK,Sounds,SLEEP,1,CHECK,Media
+Notifications to Notifications,CLICK,Notifications,SLEEP,1,CHECK,Show a preview of relevant app content in each notifications. For example, content from Gallery.
+Wallpaper and Style to Wallpaper and style,CLICK,Wallpaper and Style,SLEEP,1,CHECK,20 minutes
+Storage to Storage,CLICK,Storage,SLEEP,1,CHECK,11.69MB
+Display to Display,CLICK,Display,SLEEP,1,CHECK,Double-tap the screen to easily see inside the fridge.
+App lock to App lock,CLICK,App lock,SLEEP,1,CHECK,Memo
+Bixby to Bixby,CLICK,Bixby,SLEEP,1,CHECK,English (United States), Voice 4
+back to Settings,CLICK_COORDS,1610,55,SLEEP,1,CHECK,Voice settings, Bixby service
+back to Settings,CLICK_COORDS,3168,68,SLEEP,1,CHECK,Voice settings, Bixby service
+back to Settings,CLICK_COORDS,4726,68,SLEEP,1,CHECK,Voice settings, Bixby service
+Network status to Network status,CLICK,Network status,SLEEP,1,CHECK,Retry
+Bluetooth to Bluetooth,CLICK,Bluetooth,SLEEP,1,CHECK,No devices found
+Quick share to Quick share setting,CLICK,Quick share,SLEEP,1,CHECK,Bespoke Family Hub
+Wi-Fi to Wi-Fi,CLICK,Wi-Fi,SLEEP,1,CHECK,Connected
+Easy connection to Easy connection,CLICK,Easy connection,SLEEP,1,CHECK,Connect
+back to Connections,CLICK_COORDS,6284,68,SLEEP,1,CHECK,Connect your refrigerator to your smartphone.
+back to Connections,CLICK_COORDS,9400,68,SLEEP,1,CHECK,Connect your refrigerator to your smartphone.
+back to Connections,CLICK_COORDS,10958,68,SLEEP,1,CHECK,Connect your refrigerator to your smartphone.
+back to Connections,CLICK_COORDS,12516,68,SLEEP,1,CHECK,Connect your refrigerator to your smartphone.
+back to Settings,CLICK_COORDS,14074,68,SLEEP,1,CHECK,Voice settings, Bixby service
+back to Settings,CLICK_COORDS,15632,68,SLEEP,1,CHECK,Voice settings, Bixby service
+Cover screen start after to Cover screen start after,CLICK,Cover screen start after,SLEEP,1,CHECK,5 minutes
+Cover screen duration to Cover screen duration,CLICK,Cover screen duration,SLEEP,1,CHECK,2 hours
+Done to Wallpaper and style,CLICK,Done,SLEEP,1,CHECK,20 minutes
+Cancel to Wallpaper and style,CLICK,Cancel,SLEEP,1,CHECK,20 minutes
+Rectangle 28 to Wallpaper and style,CLICK_COORDS,17887,3827,SLEEP,1,CHECK,20 minutes
+Rectangle 30 to Wallpaper and style,CLICK_COORDS,17479,3827,SLEEP,1,CHECK,20 minutes
+back to Settings,CLICK_COORDS,20306,68,SLEEP,1,CHECK,Voice settings, Bixby service
+back to Settings,CLICK_COORDS,17190,68,SLEEP,1,CHECK,Voice settings, Bixby service
+back to Settings,CLICK_COORDS,18748,68,SLEEP,1,CHECK,Voice settings, Bixby service
+back to Connections,CLICK_COORDS,7842,68,SLEEP,1,CHECK,Connect your refrigerator to your smartphone.
 
 
